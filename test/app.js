@@ -4,7 +4,11 @@ module.exports = function(app)
     app.post("/api/test", createMessage);
     app.delete("/api/test/:id", deleteMessage);
 
-    var connectionString = 'mongodb://127.0.0.1:27017/test';
+    // Used temporarily for accessing MLab MongoDB.
+    var username = "admin";
+    var password = "admin";
+
+    var connectionString = 'mongodb://'+ username + ':' + password + '@ds113628.mlab.com:13628/heroku_9bxp0pq5';
 
     if(process.env.MLAB_USERNAME) {
         connectionString = process.env.MLAB_USERNAME + ":" +
