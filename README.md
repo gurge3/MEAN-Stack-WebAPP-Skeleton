@@ -1,8 +1,11 @@
-# web-dev-template
+Hello professor and TAs, my name is Xingyao Wu. This is my last semester studying as a undergraduate student in Northeastern University.
 
-1. git clone https://github.com/jannunzi/web-dev-template.git
-1. cd web-dev-template
-1. npm install
-1. mongod
-1. node server.js
-1. browse to localhost:3000
+My major is Computer Engineering and minor is Computer Science. I have done coops in Lenovo and IBM as Android operating system tester and
+
+front-end software engineer intern. I have done a brunch of projects in web developing like photo-based social network, Jenkins builds/BVT
+
+dashboards based on AngularJS in IBM and testbed status dashboard also in IBM.
+
+The propose of this repo is to update my code that I will be working on during this course.
+
+Heroku URL: https://wu-xingyao-webdev.herokuapp.com/
