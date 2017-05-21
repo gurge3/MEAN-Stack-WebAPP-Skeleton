@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Page</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/style.css" rel="stylesheet"/>
+</head>
+<body>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-4 hidden-xs left">
+            <nav class="navbar navbar-default navbar-fixed-top leftGreyNav">
+                <a href="page-list.html" class="navbar-link">
+                    <span class="glyphicon glyphicon-chevron-left backSignBlack"></span>
+                </a>
+                <div class="black">
+                    Pages
+                </div>
+                <p class="navbar-text pull-right">
+                    <a href="page-new.html" class="navbar-link">
+                        <span class="glyphicon glyphicon-plus plusSignBlack"></span>
+                    </a>
+                </p>
+            </nav>
+            <ul class="list-group">
+                <li class="list-group-item"><a href="widget-list.html">Blog Post</a><a href="page-edit.html"><span
+                        class="glyphicon glyphicon-cog itemIcon"></span></a></li>
+                <li class="list-group-item"><a href="widget-list.html">Blogs</a><a href="page-edit.html"><span
+                        class="glyphicon glyphicon-cog itemIcon"></span></a></li>
+                <li class="list-group-item"><a href="widget-list.html">Home</a><a href="page-edit.html"><span
+                        class="glyphicon glyphicon-cog itemIcon"></span></a></li>
+                <li class="list-group-item"><a href="widget-list.html">About</a><a href="page-edit.html"><span
+                        class="glyphicon glyphicon-cog itemIcon"></span></a></li>
+                <li class="list-group-item"><a href="widget-list.html">Contact Us</a><a href="page-edit.html"><span
+                        class="glyphicon glyphicon-cog itemIcon"></span></a></li>
+            </ul>
+        </div>
+        <div class="col-sm-4 right">
+            <nav class="navbar navbar-default navbar-fixed-top rightGreyNav">
+                <a href="page-list" class="navbar-link">
+                    <span class="glyphicon glyphicon-chevron-left backSignBlack"></span>
+                </a>
+                <div class="black">
+                    Edit Page
+                </div>
+                <p class="navbar-text pull-right">
+                    <a href="page-list.html" class="navbar-link">
+                        <span class="glyphicon glyphicon-ok okSign"></span>
+                    </a>
+                </p>
+            </nav>
+            <b>Name</b>
+            <br/>
+            <input class="form-control" type="text" placeholder="Name">
+            <br/>
+            <b>Title</b>
+            <br/>
+            <input class="form-control" placeholder="Page Title"></input>
+            <a class="btn btn-danger deleteBtn" href="page-list.html">Delete</a>
+        </div>
+    </div>
+</div>
+</div>
+
+<nav class="navbar navbar-default navbar-fixed-bottom grey">
+    <p class="navbar-text pull-right">
+        <a href="profile.html" class="navbar-link">
+            <span class="glyphicon glyphicon-user userIconBlack"></span>
+        </a>
+    </p>
+</nav>
+</body>
+</html>

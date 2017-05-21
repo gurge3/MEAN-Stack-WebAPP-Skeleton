@@ -4,4 +4,197 @@ input.form-control {
 
 body {
     padding-top: 36px;
+    height: 100%;
+}
+
+.white {
+    top: 20px;
+    color: white;
+    margin-top: 15px;
+    margin-left: 25px;
+    font-size: 17px;
+}
+
+.black {
+    top: 20px;
+    color: #5e5e5e;
+    margin-top: 15px;
+    margin-left: 25px;
+    font-size: 17px;
+}
+
+.plusSign {
+    position: absolute;
+    right: 15px;
+    top: 20px;
+    font-size: 15px;
+    color: white;
+}
+
+.okSign {
+    position: absolute;
+    right: 15px;
+    top: 20px;
+    font-size: 15px;
+    color: black;
+}
+
+.plusSignBlack {
+    position: absolute;
+    right: 15px;
+    top: 20px;
+    font-size: 15px;
+    color: black;
+}
+
+.col-sm-4.left {
+    height: 180vh;
+    border-right: thin solid;
+}
+
+.col-sm-4.right {
+    margin-top: 40px;
+    width: 64%;
+    height: 150vh;
+}
+
+@media (max-width: 768px) {
+    .col-sm-4.right {
+        margin-top: 40px;
+        width: 100%;
+    }
+}
+
+.backSign {
+    position: absolute;
+    left: 5px;
+    top: 20px;
+    font-size: 15px;
+    color: white;
+}
+
+.backSignBlack {
+    position: absolute;
+    left: 5px;
+    top: 20px;
+    font-size: 15px;
+    color: black;
+}
+
+.userIcon {
+    position: absolute;
+    right: 15px;
+    top: auto;
+    font-size: 15px;
+    color: white;
+}
+
+.userIconBlack {
+    position: absolute;
+    right: 15px;
+    top: auto;
+    font-size: 15px;
+    color: black;
+}
+
+.itemIcon {
+    position: absolute;
+    right: 5px;
+    top: 15px;
+}
+
+.list-group-item {
+    top: 10px;
+    color: #337ab7;
+    margin: 20px 5px 15px 5px;
+    border: hidden;
+}
+
+.navbar.navbar-default {
+    background-color: #337ab7;
+}
+
+.navbar.navbar-default.navbar-fixed-top {
+    bottom: 100%;
+}
+
+.navbar.navbar-default.navbar-fixed-top.leftNav {
+    left: 0%;
+    right: 66%;
+    bottom: 100%;
+    background-color: #337ab7;
+}
+
+.navbar.navbar-default.navbar-fixed-top.rightNav {
+    margin-left: 34%;
+    bottom: 100%;
+    background-color: #337ab7;
+}
+
+.navbar.navbar-default.navbar-fixed-top.leftGreyNav {
+    left: 0%;
+    right: 66%;
+    bottom: 100%;
+    background-color: #f7f7f7;
+}
+
+.navbar.navbar-default.navbar-fixed-top.rightGreyNav {
+    margin-left: 34%;
+    bottom: 100%;
+    background-color: #f7f7f7;
+}
+
+@media (max-width: 768px) {
+    .navbar.navbar-default.navbar-fixed-top.rightNav {
+        margin-left: 0%;
+        bottom: 100%;
+        background-color: #337ab7;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar.navbar-default.navbar-fixed-top.rightGreyNav {
+        margin-left: 0%;
+        bottom: 100%;
+        background-color: #f7f7f7;
+    }
+}
+
+.bs-glyphicons.glyphicon {
+    font-size: 24px;
+}
+
+.form-control.largeInput {
+    width: 100%;
+    height: 100px;
+}
+
+.btn {
+    width: 100%;
+    height: 40px;
+    margin-top: 10px;
+}
+
+.navbar.navbar-default.grey {
+    background-color: #f7f7f7;
+}
+
+.wd-widget {
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.wd-toolbar {
+    position: absolute;
+    background-color: white;
+    top: 0px;
+    right: 0px;
+    padding-left: 5px;
+    padding-bottom: 5px;
+    border-bottom-left-radius: 10px;
+    opacity: 0.8;
+}
+
+.container-fluid.fluidList {
+    height: 100vh;
 }
