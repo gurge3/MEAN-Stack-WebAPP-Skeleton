@@ -1,0 +1,38 @@
+<div class="container-fluid">
+    <div class="row">
+        <nav class="navbar navbar-default navbar-fixed-top rightGreyNav">
+            <a href="#!/user/{{model.userId}}/website/{{model.website}}/page/{{model.pageId}}/widget"
+               class="navbar-link">
+                <span class="glyphicon glyphicon-chevron-left backSignBlack"></span>
+            </a>
+            <div class="black">
+                Widget Edit
+            </div>
+            <p class="navbar-text pull-right">
+                <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget"
+                   class="navbar-link">
+                    <span class="glyphicon glyphicon-ok okSign"></span>
+                </a>
+            </p>
+        </nav>
+        <b>Name</b>
+        <br/>
+        <input class="form-control" ng-model="model.widget.name" type="text" placeholder="Name">
+        <b>Text</b>
+        <br/>
+        <input class="form-control" ng-model="model.widget.text" type="text" placeholder="Text"></input>
+        <b>URL</b>
+        <br/>
+        <input class="form-control" ng-model="model.widget.url" type="text" placeholder="URL"></input>
+        <b>Width</b>
+        <br/>
+        <input class="form-control" ng-model="model.widget.width" type="text" placeholder="Width"></input>
+        <b>Upload</b>
+        <br/>
+        <input class="form-control" type="file"></input>
+        <a class="btn btn-primary confirmButton"
+           href="#!/user/{{model.userId}}/website/:wid/page/{{model.pageId}}/widget">Upload Image</a>
+        <a class="btn btn-danger deleteBtn"
+           href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget">Delete</a>
+    </div>
+</div>

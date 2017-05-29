@@ -1,50 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Edit Website</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="css/style.css" rel="stylesheet"/>
-</head>
-<body>
-
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-4 hidden-xs left">
             <nav class="navbar navbar-default navbar-fixed-top leftNav">
-                <a href="website-list.html" class="navbar-link">
+                <a href="#!/user/{{model.userId}}/website" class="navbar-link">
                     <span class="glyphicon glyphicon-chevron-left backSign"></span>
                 </a>
                 <div class="white">
                     Website
                 </div>
                 <p class="navbar-text pull-right">
-                    <a href="website-new.html" class="navbar-link">
+                    <a href="#!/user/{{model.userId}}/website/new" class="navbar-link">
                         <span class="glyphicon glyphicon-plus plusSign"></span>
                     </a>
                 </p>
             </nav>
             <ul class="list-group">
-                <li class="list-group-item"><a href="page-list.html">Address Book App</a> <a
-                        href="website-edit.html"><span class="glyphicon glyphicon-cog itemIcon"></span></a></li>
-                <li class="list-group-item"><a href="page-list.html">Blogger</a> <a href="website-edit.html"><span
-                        class="glyphicon glyphicon-cog itemIcon"></span></a></li>
-                <li class="list-group-item"><a href="page-list.html">Blogging App</a> <a href="website-edit.html"><span
-                        class="glyphicon glyphicon-cog itemIcon"></span></a></li>
-                <li class="list-group-item"><a href="page-list.html">Script Testing App </a><a href="website-edit.html"><span
-                        class="glyphicon glyphicon-cog itemIcon"></span></a></li>
+
             </ul>
         </div>
         <div class="col-sm-4 right">
             <nav class="navbar navbar-default navbar-fixed-top rightNav">
-                <a href="website-list.html" class="navbar-link">
+                <a href="#!/user/{{model.userId}}/website" class="navbar-link">
                     <span class="glyphicon glyphicon-chevron-left backSign"></span>
                 </a>
                 <div class="white">
                     Edit Website
                 </div>
                 <p class="navbar-text pull-right">
-                    <a href="website-new.html" class="navbar-link">
+                    <a href="#!/user/{{model.userId}}/website/new" class="navbar-link">
                         <span class="glyphicon glyphicon-ok plusSign"></span>
                     </a>
                 </p>
@@ -56,7 +39,7 @@
             <b>Website Description</b>
             <br/>
             <textarea class="form-control largeInput" type="text" placeholder="Description"></textarea>
-            <a class="btn btn-danger deleteBtn" href="website-list.html">Delete</a>
+            <a class="btn btn-danger deleteBtn" href="#!/user/{{model.userId}}/website">Delete</a>
         </div>
     </div>
 </div>
@@ -64,10 +47,8 @@
 <nav class="navbar navbar-default navbar-fixed-bottom">
 
     <p class="navbar-text pull-right">
-        <a href="profile.html" class="navbar-link">
+        <a href="#!/user/{{model.userId}}" class="navbar-link">
             <span class="glyphicon glyphicon-user userIcon"></span>
         </a>
     </p>
 </nav>
-</body>
-</html>

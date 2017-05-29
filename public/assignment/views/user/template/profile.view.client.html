@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="css/style.css" rel="stylesheet"/>
-</head>
-<body>
-
 <nav class="navbar navbar-default navbar-fixed-top">
     <a href="#" class="navbar-link">
         <span class="glyphicon glyphicon-chevron-left backSign"></span>
@@ -16,7 +6,7 @@
         <Profile></Profile>
     </div>
     <p class="navbar-text pull-right">
-        <a href="profile.html" class="navbar-link">
+        <a href="#!/user/{{model.userId}}" class="navbar-link">
             <span class="glyphicon glyphicon-ok plusSign"></span>
         </a>
     </p>
@@ -29,7 +19,7 @@
     <form>
         <div class="form-group">
             <label for="username">Username</label>
-            <input type="text" class="form-control" id="username" placeholder="Username">
+            <input type="text" class="form-control" ng-model="model.user.username" id="username" placeholder="Username">
         </div>
         <div class="form-group">
             <label for="email">Email address</label>
@@ -37,29 +27,26 @@
         </div>
         <div class="form-group">
             <label for="first-name">First Name</label>
-            <input type="text" class="form-control" id="first-name" placeholder="Alice">
+            <input type="text" class="form-control" ng-model="model.user.firstName" id="first-name" placeholder="Alice">
         </div>
         <div class="form-group">
             <label for="last-name">Last Name</label>
-            <input type="text" class="form-control" id="last-name" placeholder="Wonderland">
+            <input type="text" class="form-control" ng-model="model.user.lastName" id="last-name"
+                   placeholder="Wonderland">
         </div>
     </form>
 
     <a class="btn btn-primary btn-block"
-       href="website-list.html">Websites</a>
+       href="#!/user/{{model.userId}}/website">Websites</a>
     <a class="btn btn-danger  btn-block"
-       href="login.html">Logout</a>
+       href="#!/">Logout</a>
 </div>
 
 <nav class="navbar navbar-default navbar-fixed-bottom">
 
     <p class="navbar-text pull-right">
-        <a href="#" class="navbar-link">
+        <a href="#!/user/{{model.userId}}" class="navbar-link">
             <span class="glyphicon glyphicon-user userIcon"></span>
         </a>
     </p>
 </nav>
-
-
-</body>
-</html>

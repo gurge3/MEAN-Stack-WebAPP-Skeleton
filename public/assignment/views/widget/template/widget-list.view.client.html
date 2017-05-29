@@ -1,22 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Widget List</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="css/style.css" rel="stylesheet"/>
-</head>
-<body>
-
 <nav class="navbar navbar-default navbar-fixed-top grey">
-    <a href="page-list.html" class="navbar-link">
+    <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page" class="navbar-link">
         <span class="glyphicon glyphicon-chevron-left backSignBlack"></span>
     </a>
     <div class="black">
         Widget List
     </div>
     <p class="navbar-text pull-right">
-        <a href="widget-chooser.html" class="navbar-link">
+        <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/new"
+           class="navbar-link">
             <span class="glyphicon glyphicon-plus plusSignBlack"></span>
         </a>
     </p>
@@ -26,21 +17,21 @@
 <div class="container-fluid">
     <div class="wd-widget">
         <div class="wd-toolbar">
-            <a href="widget-heading.html"><span class="glyphicon glyphicon-cog"></span></a>
+            <a href="#!/user/:uid/website/:wid/page/:pid/widget/:wgid"><span class="glyphicon glyphicon-cog"></span></a>
             <span class="glyphicon glyphicon-align-justify"></span>
         </div>
         <h1>GIZMODO</h1>
     </div>
     <div class="wd-widget">
         <div class="wd-toolbar">
-            <a href="widget-heading.html"><span class="glyphicon glyphicon-cog"></span></a>
+            <a href="#!/user/:uid/website/:wid/page/:pid/widget/:wgid"><span class="glyphicon glyphicon-cog"></span></a>
             <span class="glyphicon glyphicon-align-justify"></span>
         </div>
         <h3>A New Look at Proxima b's Potential Climate Offers Hope for Future Colonists</h3>
     </div>
     <div class="wd-widget">
         <div class="wd-toolbar">
-            <a href="widget-image.html">
+            <a href="#!/user/:uid/website/:wid/page/:pid/widget/:wgid">
                 <span class="glyphicon glyphicon-cog"></span>
             </a>
             <span class="glyphicon glyphicon-align-justify"></span>
@@ -50,7 +41,7 @@
     </div>
     <div class="wd-widget">
         <div class="wd-toolbar">
-            <a href="widget-heading.html"><span class="glyphicon glyphicon-cog"></span></a>
+            <a href="#!/user/:uid/website/:wid/page/:pid/widget/:wgid"><span class="glyphicon glyphicon-cog"></span></a>
             <span class="glyphicon glyphicon-align-justify"></span>
         </div>
 
@@ -83,7 +74,7 @@
     </div>
     <div class="wd-widget">
         <div class="wd-toolbar">
-            <a href="widget-youtube.html"><span class="glyphicon glyphicon-cog"></span></a>
+            <a href="#!/user/:uid/website/:wid/page/:pid/widget/:wgid"><span class="glyphicon glyphicon-cog"></span></a>
             <span class="glyphicon glyphicon-align-justify"></span>
         </div>
         <iframe width="100%" height="300vh" src="https://www.youtube.com/embed/Aaq3Ah4oNAE" frameborder="0"
@@ -91,7 +82,7 @@
     </div>
     <div class="wd-widget">
         <div class="wd-toolbar">
-            <a href="widget-heading.html"><span class="glyphicon glyphicon-cog"></span></a>
+            <a href="#!/user/:uid/website/:wid/page/:pid/widget/:wgid"><span class="glyphicon glyphicon-cog"></span></a>
             <span class="glyphicon glyphicon-align-justify"></span>
         </div>
         <h3>A New Look at Proxima b's Potential Climate Offers Hope for Future Colonists</h3>
@@ -101,10 +92,8 @@
 
 <nav class="navbar navbar-default navbar-fixed-bottom grey">
     <p class="navbar-text pull-right">
-        <a href="profile.html" class="navbar-link">
+        <a href="#!/user/:uid" class="navbar-link">
             <span class="glyphicon glyphicon-user userIconBlack"></span>
         </a>
     </p>
 </nav>
-</body>
-</html>

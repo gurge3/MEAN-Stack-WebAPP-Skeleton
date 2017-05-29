@@ -1,0 +1,52 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-4 hidden-xs left">
+            <nav class="navbar navbar-default navbar-fixed-top leftGreyNav">
+                <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page" class="navbar-link">
+                    <span class="glyphicon glyphicon-chevron-left backSignBlack"></span>
+                </a>
+                <div class="black">
+                    Pages
+                </div>
+                <p class="navbar-text pull-right">
+                    <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/new" class="navbar-link">
+                        <span class="glyphicon glyphicon-plus plusSignBlack"></span>
+                    </a>
+                </p>
+            </nav>
+            <ul class="list-group">
+
+            </ul>
+        </div>
+        <div class="col-sm-4 right">
+            <nav class="navbar navbar-default navbar-fixed-top rightGreyNav">
+                <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page" class="navbar-link">
+                    <span class="glyphicon glyphicon-chevron-left backSignBlack"></span>
+                </a>
+                <div class="black">
+                    New Page
+                </div>
+                <p class="navbar-text pull-right">
+                    <a ng-click="model.createPage(name, title)" class="navbar-link">
+                        <span class="glyphicon glyphicon-ok okSign"></span>
+                    </a>
+                </p>
+            </nav>
+            <b>Name</b>
+            <br/>
+            <input class="form-control" ng-model="name" type="text" placeholder="Name">
+            <br/>
+            <b>Title</b>
+            <br/>
+            <input class="form-control" ng-model="title" placeholder="Page Title"></input>
+        </div>
+    </div>
+</div>
+
+<nav class="navbar navbar-default navbar-fixed-bottom grey">
+    <p class="navbar-text pull-right">
+        <a href="#!/user/{{model.userId}}" class="navbar-link">
+            <span class="glyphicon glyphicon-user userIconBlack"></span>
+        </a>
+    </p>
+</nav>
