@@ -53,7 +53,6 @@
 
         function createWidget(widgetType) {
             var widget = {
-                _id: new Date().getTime(),
                 name: "",
                 widgetType: widgetType,
                 pageId: model.pageId
@@ -63,7 +62,7 @@
         }
     }
 
-    function widgetEditController($location, $routeParams, WidgetService) {
+    function widgetEditController($location, $routeParams, WidgetService, $scope) {
         var model = this;
 
         model.userId = $routeParams['uid'];
@@ -73,16 +72,21 @@
 
         model.deleteWidget = deleteWidget;
         model.updateWidget = updateWidget;
-        model.getWidgetTemplate = getWidgetTemplate;
 
         function init() {
             model.widget = WidgetService.findWidgetById(model.widgetId);
             model.widgets = WidgetService.findWidgetsByPageId(model.pageId);
+            $scope.type = model.widget.widgetType.toLowerCase();
         }
-
         init();
 
-        function getWidgetTemplate() {
+        $scope.template = getTemplate();
+
+        function test() {
+            return "abc";
+        }
+
+        function getTemplate() {
             var template = 'views/widget/template/widget-' + model.widget.widgetType.toLowerCase() + '-edit.view.client.html';
             return template;
         }

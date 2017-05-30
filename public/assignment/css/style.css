@@ -198,3 +198,7 @@ body {
 .container-fluid.fluidList {
     height: 100vh;
 }
+
+.editor {
+    margin-top: 35px;
+}

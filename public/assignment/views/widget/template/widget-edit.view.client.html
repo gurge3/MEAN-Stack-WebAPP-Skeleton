@@ -3,25 +3,15 @@
         <span class="glyphicon glyphicon-chevron-left backSignBlack"></span>
     </a>
     <div class="black">
-        Edit Widget
+        Widget: {{type}} Edit
     </div>
 </nav>
 
-<div ng-switch="model.widget.widgetType">
-    <div ng-switch-when="HEADING">
-        <ng-include src="'widget-heading-edit.view.client.html'">
-    </div>
-    <div ng-switch-when="IMAGE">
-        <ng-include src="'widget-image-edit.view.client.html'">
-    </div>
-    <div ng-switch-when="YOUTUBE">
-        <ng-include src="'widget-youtube-edit.view.client.html'">
-    </div>
-</div>
+<div ng-include="template"></div>
 
 <nav class="navbar navbar-default navbar-fixed-bottom grey">
     <p class="navbar-text pull-right">
-        <a href="#!/user/{{userId}}" class="navbar-link">
+        <a href="#!/user/{{model.userId}}" class="navbar-link">
             <span class="glyphicon glyphicon-user userIconBlack"></span>
         </a>
     </p>
