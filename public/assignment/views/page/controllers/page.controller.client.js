@@ -35,6 +35,7 @@
 
         function updatePage(page) {
             PageService.updatePage(model.pageId, page);
+            $location.url('/user/' + model.userId + '/website/' + model.websiteId + '/page/');
         }
 
         function deletePage(pageId) {

@@ -15,9 +15,17 @@
                 </p>
             </nav>
             <ul class="list-group">
-
+                <li ng-repeat="website in model.websites" class="list-group-item">
+                    <a href="#!/user/{{model.userId}}/website/{{website._id}}/page">
+                        {{website.name}}
+                    </a>
+                    <a href="#!/user/{{model.userId}}/website/{{website._id}}">
+                        <span class="glyphicon glyphicon-cog itemIcon"></span>
+                    </a>
+                </li>
             </ul>
         </div>
+
         <div class="col-sm-4 right">
             <nav class="navbar navbar-default navbar-fixed-top rightNav">
                 <a href="#!/user/{{model.userId}}/website" class="navbar-link">
@@ -34,12 +42,13 @@
             </nav>
             <b>Website Name</b>
             <br/>
-            <input class="form-control" type="text" placeholder="Name">
+            <input class="form-control" ng-model="model.website.name" type="text" placeholder="Name">
             <br/>
             <b>Website Description</b>
             <br/>
-            <textarea class="form-control largeInput" type="text" placeholder="Description"></textarea>
-            <a class="btn btn-danger deleteBtn" href="#!/user/{{model.userId}}/website">Delete</a>
+            <textarea class="form-control largeInput" ng-model="model.website.description" type="text" placeholder="Description"></textarea>
+            <a class="btn btn-primary" ng-click="model.updateWebsite(model.website)">Update</a>
+            <a class="btn btn-danger deleteBtn" ng-click="model.deleteWebsite(model.websiteId)">Delete</a>
         </div>
     </div>
 </div>

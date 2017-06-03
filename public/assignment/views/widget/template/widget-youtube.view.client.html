@@ -1,9 +1,8 @@
 <div class="wd-widget">
     <div class="wd-toolbar">
-        <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/{{model.widgetId}}"><span
+        <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/{{widget._id}}"><span
                 class="glyphicon glyphicon-cog"></span></a>
         <span class="glyphicon glyphicon-align-justify"></span>
     </div>
-    <iframe width="{{model.width}}" height="300vh" src="{{model.url}}" frameborder="0"
-            allowfullscreen></iframe>
+    <iframe width="{{widget.width}}" height="315" src="{{model.getUrl(widget)}}" frameborder="0" allowfullscreen></iframe>
 </div>

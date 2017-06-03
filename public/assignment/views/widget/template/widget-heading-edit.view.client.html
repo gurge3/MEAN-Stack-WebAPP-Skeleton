@@ -2,11 +2,11 @@
     <div class="row">
         <b>Text</b>
         <br/>
-        <input class="form-control" ng-model="model.widget.text" type="text" placeholder="Text"></input>
+        <input class="form-control" ng-model="model.widget.text" type="text" placeholder="Text">
         <b>Size</b>
         <br/>
-        <input class="form-control" ng-model="model.widget.size" type="text" placeholder="Size"></input>
-        <a class="btn btn-danger deleteBtn"
-           href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget">Delete</a>
+        <input class="form-control" ng-model="model.widget.size" type="text" placeholder="Size">
+        <a class="btn btn-primary" ng-click="model.updateWidget()">Update</a>
+        <a class="btn btn-danger deleteBtn" ng-click="model.deleteWidget()">Delete</a>
     </div>
 </div>

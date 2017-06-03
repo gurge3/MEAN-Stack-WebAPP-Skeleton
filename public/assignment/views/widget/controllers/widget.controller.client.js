@@ -15,11 +15,12 @@
 
         model.getHtml = getHtml;
         model.getUrl = getUrl;
+        model.getTemplate = getTemplate;
 
         function init() {
-            model.widgets = WidgetService.findWidgetsByPageId(model.pageId);
+            model.widgets = WidgetService.findAllWidgetsForPage(model.pageId);
+            console.log(model.widgets);
         }
-
         init();
 
         function getHtml(widget) {
@@ -33,6 +34,11 @@
             var url = "https://www.youtube.com/embed/" + id;
             return $sce.trustAsResourceUrl(url);
         }
+
+        function getTemplate(widgetType) {
+            var template = 'views/widget/template/widget-' + widgetType.toLowerCase() + '.view.client.html';
+            return template;
+        }
     }
 
     function widgetChooserController($location, $routeParams, WidgetService) {
@@ -42,14 +48,11 @@
         model.websiteId = $routeParams['wid'];
         model.pageId = $routeParams['pid'];
         model.widgetId = $routeParams['wgid'];
-
         model.createWidget = createWidget;
 
         function init() {
             model.widgets = WidgetService.findWidgetsByPageId(model.pageId);
         }
-
-        init();
 
         function createWidget(widgetType) {
             var widget = {
@@ -60,6 +63,7 @@
             WidgetService.createWidget(model.pageId, widget);
             $location.url('/user/' + model.userId + '/website/' + model.websiteId + '/page/' + model.pageId + '/widget/' + widget._id);
         }
+        init();
     }
 
     function widgetEditController($location, $routeParams, WidgetService, $scope) {
@@ -81,10 +85,6 @@
         init();
 
         $scope.template = getTemplate();
-
-        function test() {
-            return "abc";
-        }
 
         function getTemplate() {
             var template = 'views/widget/template/widget-' + model.widget.widgetType.toLowerCase() + '-edit.view.client.html';

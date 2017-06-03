@@ -68,7 +68,7 @@
             .when("/user/:uid/website/:wid/page/:pid/widget/:wgid", {
                 templateUrl: "../assignment/views/widget/template/widget-edit.view.client.html",
                 controller: "widgetEditController",
-                controllAs: "model"
+                controllerAs: "model"
             });
     }
 

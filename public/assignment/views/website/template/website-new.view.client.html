@@ -15,7 +15,14 @@
                 </p>
             </nav>
             <ul class="list-group">
-
+                <li ng-repeat="website in model.websites" class="list-group-item">
+                    <a href="#!/user/{{model.userId}}/website/{{website._id}}/page">
+                        {{website.name}}
+                    </a>
+                    <a href="#!/user/{{model.userId}}/website/{{website._id}}">
+                        <span class="glyphicon glyphicon-cog itemIcon"></span>
+                    </a>
+                </li>
             </ul>
         </div>
         <div class="col-sm-4 right">

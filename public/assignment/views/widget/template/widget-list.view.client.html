@@ -15,8 +15,8 @@
 
 
 <div class="container-fluid">
-    <div ng-repeat="widget in model.widgets" ng-switch="widget.widgetType">
-        <div ng-include=""
+    <div ng-repeat="widget in model.widgets">
+        <div ng-include="model.getTemplate(widget.widgetType)"></div>
     </div>
 </div>
 
