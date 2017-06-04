@@ -9,15 +9,22 @@
         model.updateUser = updateUser;
 
         function init() {
-            model.user = UserService.findUserById(model.userId);
+            UserService.findUserById(model.userId).then(
+                function (data) {
+                    model.user = data;
+                }
+            );
         }
 
         init();
 
         function updateUser() {
-            var result = UserService.updateUser(model.userId, model.user);
-            $location.url('/user/' + model.userId);
-            return result;
+            UserService.updateUser(model.userId, model.user).then(
+                function(data) {
+                    $location.url('/user/' + model.userId);
+                    return data;
+                }
+            );
         }
     }
 })();

@@ -15,9 +15,9 @@
 
 
 <div class="container-fluid">
-    <div ng-repeat="widget in model.widgets">
-        <div ng-include="model.getTemplate(widget.widgetType)"></div>
-    </div>
+    <ul ng-repeat="widget in model.widgets" wd-draggable>
+        <ui ng-include="model.getTemplate(widget.widgetType)"></ui>
+    </ul>
 </div>
 
 

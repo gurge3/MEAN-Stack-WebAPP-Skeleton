@@ -20,8 +20,17 @@
         model.deletePage = deletePage;
 
         function init() {
-            model.pages = PageService.findAllPagesForWebsite(model.websiteId);
-            model.page = PageService.findPageById(model.pageId);
+            PageService.findAllPagesForWebsite(model.websiteId).then(
+                function(data) {
+                    model.pages = data;
+                }
+            );
+
+            PageService.findPageById(model.pageId).then(
+                function(data) {
+                    model.page = data;
+                }
+            )
         }
 
         init();
@@ -56,7 +65,11 @@
         model.createPage = createPage;
 
         function init() {
-            model.websites = PageService.findAllPagesForWebsite(model.websiteId);
+            PageService.findAllPagesForWebsite(model.websiteId).then(
+                function (data) {
+                    model.pages = data;
+                }
+            )
         }
 
         init();
@@ -80,7 +93,11 @@
         model.websiteId = $routeParams['wid'];
 
         function init() {
-            model.pages = PageService.findAllPagesForWebsite(model.websiteId);
+            PageService.findAllPagesForWebsite(model.websiteId).then(
+                function (data) {
+                    model.pages = data;
+                }
+            )
         }
 
         init();

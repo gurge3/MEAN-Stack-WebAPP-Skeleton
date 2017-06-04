@@ -18,9 +18,13 @@
         model.getTemplate = getTemplate;
 
         function init() {
-            model.widgets = WidgetService.findAllWidgetsForPage(model.pageId);
-            console.log(model.widgets);
+            WidgetService.findAllWidgetsForPage(model.pageId).then(
+                function (data) {
+                    model.widgets = data;
+                }
+            );
         }
+
         init();
 
         function getHtml(widget) {
@@ -51,7 +55,11 @@
         model.createWidget = createWidget;
 
         function init() {
-            model.widgets = WidgetService.findWidgetsByPageId(model.pageId);
+            WidgetService.findAllWidgetsForPage(model.pageId).then(
+                function (data) {
+                    model.widgets = data;
+                }
+            );
         }
 
         function createWidget(widgetType) {
@@ -63,6 +71,7 @@
             WidgetService.createWidget(model.pageId, widget);
             $location.url('/user/' + model.userId + '/website/' + model.websiteId + '/page/' + model.pageId + '/widget/' + widget._id);
         }
+
         init();
     }
 
@@ -74,17 +83,24 @@
         model.pageId = $routeParams['pid'];
         model.widgetId = $routeParams['wgid'];
 
-        model.deleteWidget = deleteWidget;
-        model.updateWidget = updateWidget;
-
         function init() {
-            model.widget = WidgetService.findWidgetById(model.widgetId);
-            model.widgets = WidgetService.findWidgetsByPageId(model.pageId);
-            $scope.type = model.widget.widgetType.toLowerCase();
+            WidgetService.findWidgetById(model.widgetId).then(
+                function(data) {
+                    model.widget = data;
+                }
+            );
+            WidgetService.findAllWidgetsForPage(model.pageId).then(
+                function(data) {
+                    model.widgets = data;
+                }
+            );
         }
         init();
 
-        $scope.template = getTemplate();
+        model.deleteWidget = deleteWidget;
+        model.updateWidget = updateWidget;
+        model.getTemplate = getTemplate;
+
 
         function getTemplate() {
             var template = 'views/widget/template/widget-' + model.widget.widgetType.toLowerCase() + '-edit.view.client.html';
@@ -97,7 +113,7 @@
         }
 
         function updateWidget() {
-            var result = WidgetService.updateWidget(model.widgetId, model.widget);
+            WidgetService.updateWidget(model.widgetId, model.widget);
             $location.url('/user/' + model.userId + '/website/' + model.websiteId + '/page/' + model.pageId + /widget/);
         }
     }

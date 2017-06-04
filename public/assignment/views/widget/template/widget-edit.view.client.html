@@ -3,11 +3,11 @@
         <span class="glyphicon glyphicon-chevron-left backSignBlack"></span>
     </a>
     <div class="black">
-        Widget: {{type}} Edit
+        Widget: {{model.widget.widgetType}} Edit
     </div>
 </nav>
 
-<div ng-include="template"></div>
+<div ng-include="model.getTemplate()"></div>
 
 <nav class="navbar navbar-default navbar-fixed-bottom grey">
     <p class="navbar-text pull-right">

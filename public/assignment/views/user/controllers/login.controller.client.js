@@ -6,11 +6,14 @@
     function loginController($location, UserService) {
         var model = this;
         model.login = function (username, password) {
-            var found = UserService.findUserByCredentials(username, password);
-            if (found !== null) {
-                $location.url('/user/' + found._id);
-            } else {
-                model.message = "Username " + username + " not found, please try again";
+            UserService.findUserByCredentials(username, password).then(login);
+
+            function login(found) {
+                if (found !== "0") {
+                    $location.url('/user/' + found._id);
+                } else {
+                    model.message = "Username " + username + " not found!";
+                }
             }
         };
     }
