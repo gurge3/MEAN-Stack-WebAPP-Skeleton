@@ -9,6 +9,7 @@ module.exports = function (app) {
     var upload = multer({dest: __dirname + '/../../uploads'});
     app.post("/api/upload", upload.single('myFile'), uploadImage);
 
+
     function uploadImage(req, res) {
         var widgetId = req.body.widgetId;
         var width = req.body.width;
