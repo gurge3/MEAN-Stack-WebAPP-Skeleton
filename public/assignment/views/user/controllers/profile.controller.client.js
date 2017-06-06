@@ -7,6 +7,7 @@
         var model = this;
         model.userId = $routeParams['uid'];
         model.updateUser = updateUser;
+        model.deleteUser = deleteUser;
 
         function init() {
             UserService.findUserById(model.userId).then(
@@ -25,6 +26,11 @@
                     return data;
                 }
             );
+        }
+
+        function deleteUser() {
+            UserService.deleteUser(model.userId);
+            $location.url("/");
         }
     }
 })();
