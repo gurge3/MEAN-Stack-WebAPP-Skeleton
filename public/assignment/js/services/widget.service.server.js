@@ -4,6 +4,7 @@ module.exports = function (app) {
     app.get("/api/widget/:widgetId", findWidgetById);
     app.put("/api/widget/:widgetId", updateWidget);
     app.delete("/api/widget/:widgetId", deleteWidget);
+    app.put("/page/:pageId/widget/", sortWidget);
 
     var multer = require('multer');
     var upload = multer({dest: __dirname + '/../../uploads'});
@@ -75,6 +76,16 @@ module.exports = function (app) {
         }
     }
 
+    function findAllLocalWidgetsForPage(pageId) {
+        var resultSet = [];
+        for (var w in widgets) {
+            if (widgets[w].pageId === pageId) {
+                resultSet.push(widgets[w]);
+            }
+        }
+        return resultSet;
+    }
+
     function findAllWidgetsForPage(req, res) {
         var resultSet = [];
         var pageId = req.params["pageId"];
@@ -121,4 +132,23 @@ module.exports = function (app) {
         widgets.splice(index, 1);
         res.json(widgets);
     }
+
+    function sortWidget(req, res) {
+        var store = [];
+        var initial = req.query["initial"];
+        var final = req.query["final"];
+
+        for (var i = widgets.length - 1; i >= 0; i--) {
+            if (widgets[i].pageId === req.params["pageId"]) {
+                store.unshift(widgets[i]);
+                widgets.splice(i, 1);
+            }
+        }
+        var widget = store[initial];
+        store.splice(initial, 1);
+        store.splice(final, 0, widget);
+        widgets = widgets.concat(store);
+        res.send("OK");
+    }
+
 };

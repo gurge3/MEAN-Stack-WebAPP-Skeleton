@@ -2,12 +2,13 @@
     angular
         .module("WebAppMaker")
         .factory("WidgetService", WidgetService);
-    function WidgetService($http) {
+    function WidgetService($http, $routeParams) {
         var api = {
             "createWidget": createWidget,
             "findWidgetById": findWidgetById,
             "updateWidget": updateWidget,
             "deleteWidget": deleteWidget,
+            "sortList": sortList,
             "findAllWidgetsForPage": findAllWidgetsForPage
         };
         return api;
@@ -41,6 +42,11 @@
         function updateWidget(widgetId, widget) {
             var url = "/api/widget/" + widgetId;
             $http.put(url, widget);
+        }
+
+        function sortList(initial, final) {
+            var url = "/page/" + $routeParams['pid'] + "/widget?initial=" + initial + "&final=" + final;
+            $http.put(url);
         }
 
         function deleteWidget(widgetId) {
