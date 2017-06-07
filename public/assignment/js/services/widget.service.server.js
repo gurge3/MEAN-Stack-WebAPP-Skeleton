@@ -31,7 +31,6 @@ module.exports = function (app) {
         widget.url = '/assignment/uploads/' + filename;
 
         var callbackUrl = "/assignment/index.html#!/user/" + userId + "/website/" + websiteId + "/page/" + pageId + "/widget/";
-
         res.redirect(callbackUrl);
 
     }

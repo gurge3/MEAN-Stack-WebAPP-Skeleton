@@ -1,4 +1,21 @@
 <div class="container-fluid editor">
+    <div class="row">
+        <b>Text</b>
+        <br/>
+        <input class="form-control" ng-model="model.widget.text" type="text" placeholder="Text">
+        <b>URL</b>
+        <br/>
+        <input class="form-control" ng-model="model.widget.url" type="url" placeholder="URL">
+        <b>Width</b>
+        <br/>
+        <input class="form-control" ng-model="model.widget.width" type="text" placeholder="Width">
+        <a class="btn btn-primary confirmButton" ng-click="model.updateWidget()">Upload Photo</a>
+        <a class="btn btn-danger deleteBtn" ng-click="model.deleteWidget()">Delete</a>
+    </div>
+</div>
+
+
+<div class="container-fluid editor">
     <form action="/api/upload" method="post" enctype="multipart/form-data">
         <input name="myFile" type="file" class="form-control">
         <input name="width" value="{{model.widget.width}}" style="display: none"/>
@@ -8,4 +25,9 @@
         <input name="widgetId" value="{{model.widgetId}}" style="display: none"/>
         <button type="submit" class="btn btn-block btn-primary">Upload Image</button>
     </form>
+    <label>Flickr</label>
+    <a class="btn btn-info btn-block"
+       href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/{{model.widget._id}}/search">
+        Search On Flickr
+    </a>
 </div>

@@ -69,7 +69,12 @@
                 templateUrl: "../assignment/views/widget/template/widget-edit.view.client.html",
                 controller: "widgetEditController",
                 controllerAs: "model"
-            });
+            })
+            .when("/user/:uid/website/:wid/page/:pid/widget/:wgid/search", {
+                templateUrl: "../assignment/views/widget/template/widget-flickr-search.view.client.html",
+                controller: "imageSearchController",
+                controllerAs: "model"
+            })
     }
 
 })();

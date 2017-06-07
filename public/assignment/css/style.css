@@ -202,3 +202,14 @@ body {
 .editor {
     margin-top: 35px;
 }
+
+.flickr-list.margin {
+    margin-right: 1%;
+    margin-left: 1px;
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
+.flicker-photo {
+    margin-bottom: 5px;
+}
