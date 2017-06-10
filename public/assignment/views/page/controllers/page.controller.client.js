@@ -76,7 +76,6 @@
 
         function createPage(name, title) {
             var page = {
-                _id: new Date().getTime(),
                 name: name,
                 websiteId: model.websiteId,
                 title: title

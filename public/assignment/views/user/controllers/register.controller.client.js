@@ -15,17 +15,21 @@
             UserService.findUserByUsername(username).then(
                 function(data) {
                     var found = data;
-                    if (found !== "0") {
+                    if (found !== null) {
                         model.error = "Username is not available";
                     } else {
                         var id = (new Date()).getTime() + "";
                         var user = {
-                            _id : id,
                             username: username,
                             password: password
                         };
                         UserService.createUser(user);
-                        $location.url('/user/' + user._id);
+                        UserService.findUserByUsername(user.username).then(
+                            function(user) {
+                                var id = user._id;
+                                $location.url('/user/' + id);
+                            }
+                        );
                     }
                 }
             );

@@ -1,17 +1,16 @@
 (function () {
     angular
-        .module('WebAppMaker')
-        .controller('loginController', loginController);
+        .module("RushDelivery")
+        .controller("LoginController", LoginController);
 
-    function loginController($location, UserService) {
+    function LoginController($location, UserService) {
         var model = this;
         model.login = function (username, password) {
-            UserService.findUserByCredentials(username, password).then(login);
+            UserService.findUserByCredentials(username, password).then(login)
 
             function login(found) {
-                console.log(found);
                 if (found !== null) {
-                    $location.url('/user/' + found._id);
+                    model.success = username + " is found!";
                 } else {
                     model.message = "Username " + username + " not found!";
                 }
