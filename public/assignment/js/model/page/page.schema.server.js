@@ -7,3 +7,5 @@ var pageSchema = mongoose.Schema({
     description: String,
     dateCreated: {type: Date, default: Date.now()}
 }, {collection: 'page'});
+
+module.exports = pageSchema;

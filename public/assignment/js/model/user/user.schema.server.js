@@ -9,3 +9,5 @@ var userSchema = mongoose.Schema({
     phone: String,
     dateCreated: {type: Date, default: Date.now()}
 }, {collection: 'user'});
+
+module.exports = userSchema;
