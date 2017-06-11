@@ -118,7 +118,8 @@ module.exports = function (app) {
     }
 
     function deleteWidget(req, res) {
-        var widgetId = req.params["websiteId"];
+        var widgetId = req.params["widgetId"];
+        console.log(widgetId);
         widgetModel.deleteWidget(widgetId).then(
             function (response) {
                 res.send(response);
