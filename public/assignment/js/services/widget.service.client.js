@@ -2,7 +2,7 @@
     angular
         .module("WebAppMaker")
         .factory("WidgetService", WidgetService);
-    function WidgetService($http, $routeParams) {
+    function WidgetService($http, $routeParams, PageService) {
         var api = {
             "createWidget": createWidget,
             "findWidgetById": findWidgetById,
@@ -15,16 +15,18 @@
 
         function createWidget(pageId, widget) {
             var url = "/api/page/" + pageId + "/widget";
-            widget._id = (new Date()).getTime() + "";
             widget.pageId = pageId;
-            $http.post(url, widget);
+            return $http.post(url, widget).then(
+                function (response) {
+                    return response.data;
+                }
+            )
         }
-
 
         function findAllWidgetsForPage(pageId) {
             var url = "/api/page/" + pageId + "/widget";
             return $http.get(url).then(
-                function(response) {
+                function (response) {
                     return response.data;
                 }
             );
@@ -33,7 +35,7 @@
         function findWidgetById(widgetId) {
             var url = "/api/widget/" + widgetId;
             return $http.get(url).then(
-                function(response) {
+                function (response) {
                     return response.data;
                 }
             );
@@ -43,6 +45,7 @@
             var url = "/api/widget/" + widgetId;
             $http.put(url, widget);
         }
+
 
         function sortList(initial, final) {
             var url = "/page/" + $routeParams['pid'] + "/widget?initial=" + initial + "&final=" + final;

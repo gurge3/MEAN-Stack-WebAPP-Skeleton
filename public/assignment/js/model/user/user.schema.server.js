@@ -8,6 +8,6 @@ var userSchema = mongoose.Schema({
     email: String,
     phone: String,
     dateCreated: {type: Date, default: Date.now()}
-}, {collection: 'user'});
+}, {collection: 'wu-xingyao-webdev.user'});
 
 module.exports = userSchema;

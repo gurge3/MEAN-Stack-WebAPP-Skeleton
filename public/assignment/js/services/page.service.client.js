@@ -21,7 +21,7 @@
         function findPageById(pageId) {
             var url = "/api/page/" + pageId;
             return $http.get(url).then(
-                function(response) {
+                function (response) {
                     return response.data;
                 }
             );
@@ -40,7 +40,7 @@
         function findAllPagesForWebsite(websiteId) {
             var url = "/api/website/" + websiteId + "/page";
             return $http.get(url).then(
-                function(response) {
+                function (response) {
                     return response.data;
                 }
             );

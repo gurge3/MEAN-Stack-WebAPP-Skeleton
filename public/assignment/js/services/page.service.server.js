@@ -38,12 +38,13 @@ module.exports = function (app) {
     function updatePage(req, res) {
         var pageId = req.params["pageId"];
         var newPage = req.body;
-        pageModel.updatepage(pageId, newPage).then(
+        pageModel.updatePage(pageId, newPage).then(
             function(response) {
                 res.json(response);
             }
         );
     }
+
 
     function deletePage(req, res) {
         var pageId = req.params["pageId"];

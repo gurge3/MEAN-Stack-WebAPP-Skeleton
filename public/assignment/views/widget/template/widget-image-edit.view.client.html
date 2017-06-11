@@ -9,8 +9,8 @@
         <b>Width</b>
         <br/>
         <input class="form-control" ng-model="model.widget.width" type="text" placeholder="Width">
-        <a class="btn btn-primary confirmButton" ng-click="model.updateWidget()">Upload Photo</a>
-        <a class="btn btn-danger deleteBtn" ng-click="model.deleteWidget()">Delete</a>
+        <a class="btn btn-primary confirmButton myButton" ng-click="model.updateWidget()">Upload Photo</a>
+        <a class="btn btn-danger deleteBtn myButton" ng-click="model.deleteWidget()">Delete</a>
     </div>
 </div>
 
@@ -23,7 +23,7 @@
         <input name="websiteId" value="{{model.websiteId}}" style="display: none"/>
         <input name="pageId" value="{{model.pageId}}" style="display: none"/>
         <input name="widgetId" value="{{model.widgetId}}" style="display: none"/>
-        <button type="submit" class="btn btn-block btn-primary">Upload Image</button>
+        <button type="submit" class="btn btn-block btn-primary myButton">Upload Image</button>
     </form>
     <label>Flickr</label>
     <a class="btn btn-info btn-block"

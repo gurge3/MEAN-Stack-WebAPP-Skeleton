@@ -6,8 +6,10 @@ var pageModel = mongoose.model('PageModel', pageSchema);
 pageModel.createPage = createPage;
 pageModel.findAllPagesForWebsite = findAllPagesForWebsite;
 pageModel.findPageById = findPageById;
-pageModel.updatepage = updatePage;
+pageModel.updatePage = updatePage;
 pageModel.deletePage = deletePage;
+pageModel.addWidgetToPage = addWidgetToPage;
+module.exports = pageModel;
 
 function createPage(page) {
     return pageModel.collection.insert(page);
@@ -18,12 +20,20 @@ function findAllPagesForWebsite(websiteId) {
 
 }
 
+function addWidgetToPage(pageId, widgetId) {
+    return pageModel.findById(pageId).then(
+        function (page) {
+            page._widgets.push(widgetId);
+            return page.save();
+        }
+    );
+}
+
 function findPageById(pageId) {
     return pageModel.findById(pageId);
 }
 
 function updatePage(pageId, page) {
-    console.log(pageId);
     return pageModel.update(
         {_id: pageId}, {$set: page}
     );
@@ -35,5 +45,4 @@ function deletePage(pageId) {
     });
 }
 
-module.exports = pageModel;
 
