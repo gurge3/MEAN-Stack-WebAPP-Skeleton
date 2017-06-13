@@ -18,7 +18,6 @@
                     if (found !== null) {
                         model.error = "Username is not available";
                     } else {
-                        var id = (new Date()).getTime() + "";
                         var user = {
                             username: username,
                             password: password
