@@ -1,14 +1,19 @@
 <div class="container-fluid editor">
     <div class="row">
-        Text
+        <b>Name</b>
+        <div ng-show="model.error" class="alert alert-danger">
+            {{model.error}}
+        </div>
+        <input class="form-control" ng-model="model.widget.name" type="text" placeholder="Name">
+        <b>Text</b>
         <br/>
-        <input ng-model="model.widget.text" class="form-control"/>
-        Rows
+        <input ng-model="model.widget.text" class="form-control" placeholder="Text"/>
+        <b>Rows</b>
         <br/>
-        <input ng-model="model.widget.rows" class="form-control" type="number"/>
-        Placeholder
+        <input ng-model="model.widget.rows" class="form-control" type="number" placeholder="Rows"/>
+        <b>Placeholder</b>
         <br/>
-        <input ng-model="model.widget.placeholder" class="form-control"/>
+        <input ng-model="model.widget.placeholder" class="form-control" placeholder="Placeholder"/>
         Formatted
         <br/>
         <input ng-model="model.widget.formatted" class="" type="checkbox"/>

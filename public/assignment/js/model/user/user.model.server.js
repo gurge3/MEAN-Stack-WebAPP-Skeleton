@@ -9,6 +9,7 @@ userModel.findUserByUsername = findUserByUsername;
 userModel.updateUser = updateUser;
 userModel.findUserById = findUserById;
 userModel.deleteUser = deleteUser;
+userModel.findUserByFacebookId = findUserByFacebookId;
 
 function createUser(user) {
     var userResult = userModel.collection.insert(user);
@@ -33,10 +34,10 @@ function findUserByCredentials(username, password) {
 }
 
 function updateUser(userId, newUser) {
-    delete newUser.username;
-    return userModel.update({
-        _id: userId,
-        $set : {
+    return userModel.update(
+        {_id: userId},
+        {$set : {
+            username: newUser.username,
             firstName: newUser.firstName,
             lastName: newUser.lastName,
             email: newUser.email,
@@ -49,6 +50,10 @@ function deleteUser(userId) {
     return userModel.remove({
         _id: userId
     });
+}
+
+function findUserByFacebookId(facebookId) {
+    return userModel.findOne({'facebook.id': facebookId});
 }
 
 module.exports = userModel;

@@ -118,6 +118,13 @@
         }
 
         function updateWidget() {
+            var name = model.widget.name;
+            var url = model.widget.url;
+            if (name === "" || typeof name === "undefined" ) {
+                model.error = "Please enter a name!";
+                return;
+            }
+
             WidgetService.updateWidget(model.widgetId, model.widget);
             $location.url('/user/' + model.userId + '/website/' + model.websiteId + '/page/' + model.pageId + /widget/);
         }

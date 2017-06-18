@@ -43,6 +43,11 @@
         }
 
         function updatePage(page) {
+            var name = page.name;
+            if (typeof name === "undefined" || name === "") {
+                model.error = "Please enter a name!";
+                return;
+            }
             WidgetService.findAllWidgetsForPage(model.pageId).then(
                 function (widgets) {
                     page._widget = widgets;
@@ -80,6 +85,10 @@
         init();
 
         function createPage(name, title) {
+            if (name === "" || typeof name === "undefined") {
+                model.error = "Please enter a name!";
+                return;
+            }
             var page = {
                 name: name,
                 websiteId: model.websiteId,

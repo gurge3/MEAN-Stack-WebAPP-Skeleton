@@ -40,7 +40,9 @@
                 </p>
             </nav>
             <b>Name</b>
-            <br/>
+            <div ng-show="model.error" class="alert alert-danger">
+                {{model.error}}
+            </div>
             <input class="form-control" ng-model="name" type="text" placeholder="Name">
             <br/>
             <b>Description</b>

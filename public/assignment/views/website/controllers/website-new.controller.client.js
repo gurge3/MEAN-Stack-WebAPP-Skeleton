@@ -23,6 +23,10 @@
         init();
 
         function createWebsite(name, description) {
+            if (typeof name === "undefined" || name === "") {
+                model.error = "Please enter a name!";
+                return;
+            }
             var website = {
                 name: name,
                 developerId: model.userId,

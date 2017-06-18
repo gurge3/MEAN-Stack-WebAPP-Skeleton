@@ -27,6 +27,7 @@ function createWidget(widget) {
 function findAllWidgetsForPage(pageId) {
     return pageModel.findPageById(pageId).then(
         function (page) {
+            console.log(page);
             return page._widgets;
         }
     );

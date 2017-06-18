@@ -11,6 +11,7 @@ module.exports = function (app) {
     var upload = multer({dest: __dirname + '/../../uploads'});
     app.post("/api/upload", upload.single('myFile'), uploadImage);
 
+    var pageModel = require("../model/page/page.model.server");
 
     function uploadImage(req, res) {
         var widgetId = req.body.widgetId;
@@ -59,7 +60,6 @@ module.exports = function (app) {
                 widgetModel.findWidgetByIds(widgetIds).then(
                     function (widgets) {
                         var finalHashWidgetList = getHashedList(widgets);
-
                         function getHashedList(widgets) {
                             var hashedWidgetList = [];
                             for (var i in widgets) {
@@ -119,6 +119,8 @@ module.exports = function (app) {
 
     function deleteWidget(req, res) {
         var widgetId = req.params["widgetId"];
+        var pageId = req.params["pageId"];
+        pageModel.deleteWidget(pageId, widgetId);
         widgetModel.deleteWidget(widgetId).then(
             function (response) {
                 res.send(response);

@@ -41,7 +41,9 @@
                 </p>
             </nav>
             <b>Website Name</b>
-            <br/>
+            <div ng-show="model.error" class="alert alert-danger">
+                {{model.error}}
+            </div>
             <input class="form-control" ng-model="model.website.name" type="text" placeholder="Name">
             <br/>
             <b>Website Description</b>

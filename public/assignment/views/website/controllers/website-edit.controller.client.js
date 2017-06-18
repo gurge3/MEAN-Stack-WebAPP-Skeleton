@@ -39,6 +39,11 @@
         }
 
         function updateWebsite(website) {
+            var name = website.name;
+            if (typeof name === "undefined" || name === "") {
+                model.error = "Please enter a name!";
+                return;
+            }
             WebsiteService.updateWebsite(model.websiteId, website);
             $location.url('/user/' + model.userId + '/website');
         }

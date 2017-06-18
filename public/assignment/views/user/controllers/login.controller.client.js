@@ -5,17 +5,37 @@
 
     function loginController($location, UserService) {
         var model = this;
-        model.login = function (username, password) {
-            UserService.findUserByCredentials(username, password).then(login);
+        model.login = login;
 
-            function login(found) {
-                console.log(found);
-                if (found !== null) {
-                    $location.url('/user/' + found._id);
-                } else {
-                    model.message = "Username " + username + " not found!";
-                }
+        function login(user) {
+            if (typeof user === "undefined") {
+                model.message = "Please enter both your username and password!";
+                return;
             }
-        };
+
+            var username = user.username;
+            if (typeof username === "undefined" || username === "") {
+                model.message = "Please enter your username!";
+                return;
+            }
+
+            var password = user.password;
+            if (typeof password === "undefined" || password === "") {
+                model.message = "Please enter your password!";
+                return;
+            }
+
+            UserService
+                .login(user)
+                .then(
+                    function (response) {
+                        var user = response.data;
+                        $location.url("/profile");
+                    },
+                    function (err) {
+                        model.message = "Failed to login in, please try again!";
+                    }
+                )
+        }
     }
 })();

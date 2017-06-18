@@ -8,10 +8,21 @@
         model.register = register;
 
         function register(username, password, password2) {
-            if (password !== password2) {
-                model.error = "Passwords must match";
+            if (typeof username === "undefined") {
+                model.error = "Please enter your username!";
                 return;
             }
+            console.log(password);
+            if (typeof password === "undefined" || password === "") {
+                model.error = "Please enter your password!";
+                return;
+            }
+
+            if (typeof password === "undefined") {
+                model.error = "Please enter your password again!";
+                return;
+            }
+
             UserService.findUserByUsername(username).then(
                 function(data) {
                     var found = data;
@@ -22,13 +33,12 @@
                             username: username,
                             password: password
                         };
-                        UserService.createUser(user);
-                        UserService.findUserByUsername(user.username).then(
-                            function(user) {
-                                var id = user._id;
-                                $location.url('/user/' + id);
-                            }
-                        );
+                        UserService.register(user)
+                            .then(
+                                function(response) {
+                                    $location.url('/profile');
+                                }
+                            );
                     }
                 }
             );
