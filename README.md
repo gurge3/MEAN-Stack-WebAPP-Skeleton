@@ -6,4 +6,4 @@ dashboards based on AngularJS in IBM and testbed status dashboard also in IBM.
 
 The propose of this repo is to update my code that I will be working on during this course.
 
-Heroku URL: https://wu-xingyao-webdev.herokuapp.com/
+Heroku URL: http://wuxingyao.herokuapp.com
